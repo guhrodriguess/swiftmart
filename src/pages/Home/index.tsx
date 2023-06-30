@@ -1,28 +1,25 @@
-import { CaretRight } from "@phosphor-icons/react";
+import { MouseSimple } from "@phosphor-icons/react";
 import { HomeComponent, HomeLayout, Content } from "./styles";
 
-import image from "/public/assets/home.png";
+import homeImage from "/public/assets/home.png";
 
 export default function Home() {
   return (
     <HomeComponent>
       <HomeLayout>
-        {/* Left */}
         <Content>
           <h1>
-            A <span>velocidade</span> dos seus desejos em um{" "}
+            A <span>velocidade</span> dos seus <br /> desejos em um{" "}
             <span>clique!</span>
           </h1>
           <div className="buttons">
             <button>
-              Conheça os produtos <CaretRight weight="bold" size={16} />
+              Conheça os produtos <MouseSimple weight="bold" size={18} />
             </button>
           </div>
         </Content>
-
-        {/* Right */}
         <div>
-          <img src={image} width={300} alt="" />
+          <img src={homeImage} width={300} alt="" />
         </div>
       </HomeLayout>
     </HomeComponent>
