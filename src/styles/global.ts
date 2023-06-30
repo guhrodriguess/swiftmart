@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins", sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: ${(props) => props.theme.bg_primary};
     outline: none;

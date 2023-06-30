@@ -28,19 +28,18 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 15px;
-    background: transparent;
-    color: ${(props) => props.theme.primary};
-    border: 2px solid ${(props) => props.theme.primary};
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.white};
+    border: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
-      background: ${(props) => props.theme.primary};
-      color: ${(props) => props.theme.white};
+      background: ${(props) => props.theme.secondary};
     }
   }
 
