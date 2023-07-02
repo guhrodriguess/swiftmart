@@ -17,7 +17,6 @@ export default function Header() {
                 </NavLogo>
                 <SearchBar />
                 <CartButton />
-                {isCartVisible && <PageOpacity />}
             </Nav>
         </HeaderComponent>
     );

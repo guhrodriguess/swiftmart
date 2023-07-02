@@ -8,13 +8,8 @@ export default function CartButton() {
         useContext(AppContext);
 
     const handleCartBar = () => {
-        setIsCartVisible(!isCartVisible);
-
-        if (!isCartVisible) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        setIsCartVisible(true);
+        document.body.style.overflow = "hidden";
     };
 
     return (

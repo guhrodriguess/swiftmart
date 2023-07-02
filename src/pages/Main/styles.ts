@@ -14,15 +14,17 @@ export const MainLayout = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 0;
 
     img {
-        @media (max-width: 820px) {
+        max-width: 600px;
+        width: 100%;
+
+        @media (max-width: 940px) {
             display: none;
         }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 940px) {
         justify-content: center;
     }
 `;
@@ -31,11 +33,15 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
+    max-width: 600px;
+    width: 100%;
 
-    @media (max-width: 820px) {
+    @media (max-width: 940px) {
         text-align: center;
         align-items: center;
         justify-content: center;
+        max-width: 500px;
+        width: 100%;
     }
 
     h1 {

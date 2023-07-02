@@ -1,4 +1,4 @@
-import { X } from "@phosphor-icons/react";
+import { TrashSimple } from "@phosphor-icons/react";
 import { CartWrapper, Content, Image } from "./styles";
 import formatCurrency from "../../utils/formatCurrency";
 import { useContext } from "react";
@@ -20,7 +20,7 @@ export function CartItem({ data }) {
                 <h3>{title}</h3>
                 <span>{formatCurrency(price)}</span>
                 <button onClick={handleRemoveItem}>
-                    <X weight="bold" size={20} />
+                    <TrashSimple weight="bold" size={20} />
                 </button>
             </Content>
         </CartWrapper>

@@ -8,13 +8,15 @@ export const ProductComponent = styled.div`
 
     img {
         width: 100%;
+        border-radius: 50px 5px 50px 5px;
     }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    text-align: center;
     margin: 1rem 0;
 
     h4 {
@@ -22,21 +24,21 @@ export const Content = styled.div`
     }
 
     span {
-        margin: 0.7rem 0;
+        margin: 0.3rem 0;
         font-size: 1.2rem;
         font-weight: 700;
         color: ${(props) => props.theme.secondary};
     }
 
     button {
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
         font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
+        font-weight: 700;
         border-radius: 10px;
         background: transparent;
         color: ${(props) => props.theme.primary};
-        border: 2px solid ${(props) => props.theme.primary};
+        border: 4px solid ${(props) => props.theme.primary};
         cursor: pointer;
         transition: all 0.3s ease-in-out;
 
@@ -44,10 +46,5 @@ export const Content = styled.div`
             background: ${(props) => props.theme.primary};
             color: ${(props) => props.theme.white};
         }
-    }
-
-    @media (max-width: 820px) {
-        align-items: center;
-        text-align: center;
     }
 `;

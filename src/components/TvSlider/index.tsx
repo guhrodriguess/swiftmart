@@ -5,8 +5,14 @@ import ProductItem from "../ProductItem";
 import { useState, useEffect } from "react";
 import { ProductCard } from "../../styles/global";
 
+interface SliderProps {
+    products?: string[];
+    setProducts?: React.Dispatch<React.SetStateAction<string[]>>;
+    id: string;
+}
+
 export default function TvSlider() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<SliderProps[]>([]);
 
     useEffect(() => {
         fetchProducts("tv").then((response) => {
@@ -45,8 +51,8 @@ export default function TvSlider() {
                 }}
             >
                 {products.map((product) => (
-                    <SwiperSlide>
-                        <ProductItem key={product.id} data={product} />
+                    <SwiperSlide key={product.id}>
+                        <ProductItem data={product} />
                     </SwiperSlide>
                 ))}
             </Swiper>

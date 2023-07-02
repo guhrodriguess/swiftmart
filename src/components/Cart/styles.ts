@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CartWrapper = styled.div`
     width: 100%;
     max-width: 350px;
-    height: calc(100vh - 5.4rem);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,11 +11,10 @@ export const CartWrapper = styled.div`
     z-index: 999;
     top: 0;
     right: 0;
-    margin-top: 5.4rem;
     padding: 1rem 1.5rem;
-    background-color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.background};
     transition: all 400ms ease;
-    border-radius: 15px 0 0 15px;
+    border-radius: 25px 0 0 25px;
 
     ::-webkit-scrollbar {
         width: 10px;
@@ -26,6 +25,74 @@ export const CartWrapper = styled.div`
         background: ${(props) => props.theme.gray};
         border: 3.5px solid ${(props) => props.theme.white};
     }
+
+    hr {
+        width: 50%;
+        height: 5px;
+        border: none;
+        background: ${(props) => props.theme.primary};
+        border-radius: 15px;
+    }
+
+    button {
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    #close {
+        margin: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: ${(props) => props.theme.red};
+        }
+    }
+`;
+
+export const Info = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 0 2rem 0;
+
+    span {
+        font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: ${(props) => props.theme.primary};
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 3px;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            display: block;
+            background: ${(props) => props.theme.primary};
+            left: 0%;
+            transform: translateX(0%);
+            position: absolute;
+            bottom: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media (max-width: 940px) {
+                height: 0px;
+            }
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
 `;
 
 export const CartList = styled.div`
@@ -35,11 +102,30 @@ export const CartList = styled.div`
 
 export const CartResume = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 1.8rem;
-    font-weight: 600;
     padding: 35px 0 15px;
-    color: ${(props) => props.theme.primary};
     border-top: 1px solid ${(props) => props.theme.gray};
+
+    span {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    p {
+        color: ${(props) => props.theme.primary};
+        font-weight: 700;
+    }
+`;
+
+export const PageOpacity = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    background-color: ${(props) => props.theme.black_opacity};
+    backdrop-filter: blur(5px);
 `;

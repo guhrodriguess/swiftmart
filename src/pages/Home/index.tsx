@@ -9,11 +9,13 @@ export default function Home() {
     return (
         <>
             <Main />
-            <PhoneSlider />
-            <TechSlider />
-            <HardwareSlider />
-            <TvSlider />
-            <GameSlider />
+            <div style={{ margin: "5rem 0" }}>
+                <PhoneSlider />
+                <TechSlider />
+                <HardwareSlider />
+                <TvSlider />
+                <GameSlider />
+            </div>
         </>
     );
 }

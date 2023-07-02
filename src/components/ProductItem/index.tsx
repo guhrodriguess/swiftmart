@@ -26,9 +26,9 @@ export default function ProductItem({ data }: ProductProps) {
         <ProductComponent>
             <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt="product" />
             <Content>
-                <h4>{title}</h4>
+                <h4>{title.slice(0, 45)}</h4>
                 <span>{formatCurrency(price)}</span>
-                <button onClick={handleAddCart}>Adicionar ao carrinho</button>
+                <button onClick={handleAddCart}>adicionar ao carrinho</button>
             </Content>
         </ProductComponent>
     );

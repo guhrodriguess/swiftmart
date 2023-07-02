@@ -4,11 +4,10 @@ export default function Footer() {
     return (
         <FooterComponent>
             <Content>
-                <h1>
-                    Swift<span>Mart.</span>
-                </h1>
+                <h1>SwiftMart.</h1>
+                <h3>&mdash;</h3>
                 <p>
-                    Feito por{" "}
+                    Por{" "}
                     <a href="https://github.com/guhrodriguess" target="_blank">
                         Gustavo Rodrigues
                     </a>

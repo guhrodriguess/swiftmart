@@ -9,7 +9,7 @@ export default function Main() {
             <MainLayout>
                 <Content>
                     <h1>
-                        A <span>velocidade</span> dos seus <br /> desejos em um{" "}
+                        A <span>velocidade</span> dos seus desejos em um{" "}
                         <span>clique!</span>
                     </h1>
                     <div className="buttons">
@@ -21,7 +21,7 @@ export default function Main() {
                         </a>
                     </div>
                 </Content>
-                <img src={homeImage} width={700} alt="" />
+                <img src={homeImage} alt="" />
             </MainLayout>
         </MainComponent>
     );

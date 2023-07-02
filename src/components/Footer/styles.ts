@@ -1,32 +1,45 @@
 import styled from "styled-components";
 
 export const FooterComponent = styled.footer`
-    height: 20vh;
+    padding: 1.5rem 0;
     background-color: ${(props) => props.theme.primary};
     border-radius: 25px 25px 0 0;
+
+    ::selection {
+        background: ${(props) => props.theme.white};
+        color: ${(props) => props.theme.primary};
+    }
 `;
 
 export const Content = styled.div`
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100%;
+    gap: 0.6rem;
 
     h1 {
+        font-size: 1.7rem;
+        color: ${(props) => props.theme.white};
+    }
+
+    h3 {
+        user-select: none;
         color: ${(props) => props.theme.white};
     }
 
     p {
         font-weight: 500;
-        color: #e5e7eb;
-        margin: 0.5rem 0;
+        font-size: 0.9rem;
+        color: ${(props) => props.theme.tertiary};
     }
 
     a {
-        transition: all 0.4s;
         text-decoration: none;
-        color: #e5e7eb;
+        color: ${(props) => props.theme.tertiary};
         position: relative;
         padding-bottom: 6px;
 
@@ -42,7 +55,7 @@ export const Content = styled.div`
             bottom: 0;
             transition: all 0.2s ease-in-out;
 
-            @media (max-width: 768px) {
+            @media (max-width: 940px) {
                 height: 0px;
             }
         }

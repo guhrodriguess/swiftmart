@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background-color: ${(props) => props.theme.white};
+      background-color: ${(props) => props.theme.background};
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
@@ -48,8 +48,9 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
     width: 100%;
-    max-width: 1500px;
+    max-width: 1450px;
     margin: 0 auto;
+    padding: 0 1rem;
 `;
 
 export const ProductCard = styled.section`
@@ -72,7 +73,7 @@ export const ProductCard = styled.section`
             border-radius: 15px;
         }
 
-        @media (max-width: 820px) {
+        @media (max-width: 940px) {
             display: flex;
             flex-direction: column;
             align-items: center;
