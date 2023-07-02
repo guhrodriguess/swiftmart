@@ -12,10 +12,10 @@ export const InputWrapper = styled.div`
   position: relative;
 
   input {
-    width: 500px;
+    width: 100%;
     padding: 1rem 2rem 1rem 0.8rem;
     background: transparent;
-    border: 1px solid ${(props) => props.theme.bg_secondary};
+    border: 1px solid ${(props) => props.theme.border};
     font-weight: 500;
     border-radius: 15px;
 

@@ -7,6 +7,7 @@ export const Button = styled.button`
   position: relative;
   background: transparent;
   border: none;
+  cursor: pointer;
 
   span {
     background-color: red;
