@@ -6,29 +6,29 @@ import fetchProducts from "../../api/fetchProducts";
 import { useSearchParams } from "react-router-dom";
 
 export default function SearchPage() {
-  const { products, setProducts } = useContext(AppContext);
+    const { products, setProducts } = useContext(AppContext);
 
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("q");
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get("q");
 
-  useEffect(() => {
-    fetchProducts(query).then((response) => {
-      setProducts(response);
-    });
-  }, []);
+    useEffect(() => {
+        fetchProducts(query).then((response) => {
+            setProducts(response);
+        });
+    }, []);
 
-  return (
-    <Section>
-      <Details>
-        <h3>
-          Resultados para <span>{query}</span>
-        </h3>
-      </Details>
-      <ProductList>
-        {products.map((product) => (
-          <ProductItem key={product.id} data={product} />
-        ))}
-      </ProductList>
-    </Section>
-  );
+    return (
+        <Section>
+            <Details>
+                <h3>
+                    Resultados para <span>{query}</span>
+                </h3>
+            </Details>
+            <ProductList>
+                {products.map((product) => (
+                    <ProductItem key={product.id} data={product} />
+                ))}
+            </ProductList>
+        </Section>
+    );
 }

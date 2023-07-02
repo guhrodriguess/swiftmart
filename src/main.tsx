@@ -12,23 +12,25 @@ import Home from "./pages/Home";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Toast from "./components/Toast";
+import ScrollTop from "./components/ScrollTop/index.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Router>
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
-      <Toast />
-      <Container>
-        <Provider>
-          <Header />
-          <Cart />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search" element={<SearchPage />} />
-          </Routes>
-        </Provider>
-      </Container>
-      <Footer />
-    </ThemeProvider>
-  </Router>
+    <Router>
+        <ThemeProvider theme={defaultTheme}>
+            <GlobalStyle />
+            <Toast />
+            <Container>
+                <Provider>
+                    <Header />
+                    <Cart />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/search" element={<SearchPage />} />
+                    </Routes>
+                </Provider>
+                <ScrollTop />
+            </Container>
+            <Footer />
+        </ThemeProvider>
+    </Router>
 );

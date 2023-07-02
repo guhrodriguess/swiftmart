@@ -5,24 +5,24 @@ import { useContext } from "react";
 import AppContext from "../../contexts/appContext";
 
 export function CartItem({ data }) {
-  const { cartItems, setCartItems } = useContext(AppContext);
-  const { id, thumbnail, title, price } = data;
+    const { cartItems, setCartItems } = useContext(AppContext);
+    const { id, thumbnail, title, price } = data;
 
-  const handleRemoveItem = () => {
-    const updatedItems = cartItems.filter((item) => item.id != id);
-    setCartItems(updatedItems);
-  };
+    const handleRemoveItem = () => {
+        const updatedItems = cartItems.filter((item) => item.id != id);
+        setCartItems(updatedItems);
+    };
 
-  return (
-    <CartWrapper>
-      <Image src={thumbnail} alt="Imagem do Produto" />
-      <Content>
-        <h3>{title}</h3>
-        <span>{formatCurrency(price)}</span>
-        <button onClick={handleRemoveItem}>
-          <X weight="bold" size={20} />
-        </button>
-      </Content>
-    </CartWrapper>
-  );
+    return (
+        <CartWrapper>
+            <Image src={thumbnail} alt="Imagem do Produto" />
+            <Content>
+                <h3>{title}</h3>
+                <span>{formatCurrency(price)}</span>
+                <button onClick={handleRemoveItem}>
+                    <X weight="bold" size={20} />
+                </button>
+            </Content>
+        </CartWrapper>
+    );
 }

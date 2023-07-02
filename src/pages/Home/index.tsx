@@ -6,14 +6,14 @@ import TvSlider from "../../components/TvSlider";
 import Main from "../Main";
 
 export default function Home() {
-  return (
-    <>
-      <Main />
-      <PhoneSlider />
-      <TechSlider />
-      <HardwareSlider />
-      <TvSlider />
-      <GameSlider />
-    </>
-  );
+    return (
+        <>
+            <Main />
+            <PhoneSlider />
+            <TechSlider />
+            <HardwareSlider />
+            <TvSlider />
+            <GameSlider />
+        </>
+    );
 }

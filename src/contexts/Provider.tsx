@@ -1,22 +1,23 @@
-import { useState, ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
 import AppContext from "./appContext";
 
-export default function Provider({ children }: ReactNode) {
-  const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-  const [isCartVisible, setIsCartVisible] = useState(false);
-  const [loading, setLoading] = useState(true);
+interface ProviderProps {
+    children: ReactNode;
+}
 
-  const value = {
-    products,
-    setProducts,
-    cartItems,
-    setCartItems,
-    isCartVisible,
-    setIsCartVisible,
-    loading,
-    setLoading,
-  };
+export default function Provider({ children }: ProviderProps) {
+    const [products, setProducts] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [isCartVisible, setIsCartVisible] = useState(false);
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+    const value = {
+        products,
+        setProducts,
+        cartItems,
+        setCartItems,
+        isCartVisible,
+        setIsCartVisible,
+    };
+
+    return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
