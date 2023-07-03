@@ -23,7 +23,7 @@ export const CartWrapper = styled.div`
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: ${(props) => props.theme.gray};
-        border: 3.5px solid ${(props) => props.theme.white};
+        border: 3.5px solid ${(props) => props.theme.background};
     }
 
     hr {

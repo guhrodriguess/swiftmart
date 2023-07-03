@@ -1,19 +1,16 @@
 import styled from "styled-components";
-import { fadeIn } from "../../styles/global";
+import { fadeIn } from "../../styles/keyframes";
 
 export const Section = styled.div`
-    padding: 0 0.5rem;
+    padding: 5rem 0.5rem;
     animation: ${fadeIn} 0.6s ease;
 `;
 
 export const Details = styled.div`
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
 
     h3 {
-        margin: 1rem 0;
-
         span {
             color: ${(props) => props.theme.primary};
             border-bottom: 4px solid ${(props) => props.theme.primary};

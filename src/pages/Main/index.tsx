@@ -1,7 +1,7 @@
 import { MouseSimple } from "@phosphor-icons/react";
 import { MainComponent, MainLayout, Content } from "./styles";
 
-import homeImage from "/public/assets/home.png";
+import SMImage from "/public/assets/home.png";
 
 export default function Main() {
     return (
@@ -14,14 +14,11 @@ export default function Main() {
                     </h1>
                     <div className="buttons">
                         <a href="#product">
-                            <button>
-                                Conheça os produtos{" "}
-                                <MouseSimple weight="bold" size={18} />
-                            </button>
+                            <button>Conheça os produtos </button>
                         </a>
                     </div>
                 </Content>
-                <img src={homeImage} alt="" />
+                <img src={SMImage} alt="SwiftMart" />
             </MainLayout>
         </MainComponent>
     );

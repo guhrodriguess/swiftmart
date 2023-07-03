@@ -3,48 +3,67 @@ import styled from "styled-components";
 export const ProductComponent = styled.div`
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
-    padding: 2.5rem 1rem;
+    margin: 2rem auto;
+    padding: 0rem 1.5rem;
+    overflow: hidden;
+    background-color: ${(props) => props.theme.white};
+    box-shadow: rgba(0, 0, 0, 0.4) -2px 15px 26px -14px;
+    border-radius: 15px;
+`;
+
+export const ImageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
 
     img {
-        width: 100%;
-        border-radius: 50px 5px 50px 5px;
+        width: 80%;
+        margin: 1rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 0.5rem;
     margin: 1rem 0;
+    position: relative;
 
     h4 {
-        font-weight: 600;
+        margin: 0.3rem 0 0.6rem 0;
+        font-weight: 700;
+        color: ${(props) => props.theme.black};
     }
 
     span {
-        margin: 0.3rem 0;
-        font-size: 1.2rem;
+        margin: 0.3rem 0 0.5rem 0;
+        font-size: 0.9rem;
         font-weight: 700;
-        color: ${(props) => props.theme.secondary};
+        color: ${(props) => props.theme.black};
     }
 
     button {
-        padding: 0.5rem 1rem;
-        margin: 0.5rem 0;
-        font-size: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0.6rem;
         font-weight: 700;
-        border-radius: 10px;
-        background: transparent;
-        color: ${(props) => props.theme.primary};
-        border: 4px solid ${(props) => props.theme.primary};
+        border-radius: 50px;
+        background: ${(props) => props.theme.primary};
+        color: ${(props) => props.theme.white};
+        border: none;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
 
         &:hover {
-            background: ${(props) => props.theme.primary};
-            color: ${(props) => props.theme.white};
+            background: ${(props) => props.theme.secondary};
         }
     }
 `;

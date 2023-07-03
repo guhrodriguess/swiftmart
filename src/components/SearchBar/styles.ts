@@ -10,6 +10,7 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
 
     input {
         max-width: 500px;

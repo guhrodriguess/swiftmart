@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import formatCurrency from "../../utils/formatCurrency";
-import { Content, ProductComponent } from "./styles";
+import { Content, ProductComponent, ImageWrapper } from "./styles";
 import AppContext from "../../contexts/appContext";
 import { addProductAlert } from "../Toast";
+import { Plus } from "@phosphor-icons/react";
 
 interface ProductProps {
     data: string;
@@ -24,11 +25,18 @@ export default function ProductItem({ data }: ProductProps) {
 
     return (
         <ProductComponent>
-            <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt="product" />
+            <ImageWrapper>
+                <img
+                    src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
+                    alt="product"
+                />
+            </ImageWrapper>
             <Content>
-                <h4>{title.slice(0, 45)}</h4>
+                <h4>{title.slice(0, 45)}...</h4>
                 <span>{formatCurrency(price)}</span>
-                <button onClick={handleAddCart}>adicionar ao carrinho</button>
+                <button onClick={handleAddCart}>
+                    <Plus weight="bold" size={18} />
+                </button>
             </Content>
         </ProductComponent>
     );

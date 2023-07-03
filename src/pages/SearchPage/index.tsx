@@ -15,7 +15,7 @@ export default function SearchPage() {
         fetchProducts(query).then((response) => {
             setProducts(response);
         });
-    }, []);
+    }, [query]);
 
     return (
         <Section>

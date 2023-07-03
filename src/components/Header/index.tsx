@@ -1,12 +1,8 @@
-import AppContext from "../../contexts/appContext";
 import CartButton from "../CartButton";
 import SearchBar from "../SearchBar";
-import { HeaderComponent, Nav, NavLogo, PageOpacity } from "./styles";
-import { useContext } from "react";
+import { HeaderComponent, Nav, NavLogo } from "./styles";
 
 export default function Header() {
-    const { isCartVisible } = useContext(AppContext);
-
     return (
         <HeaderComponent>
             <Nav>

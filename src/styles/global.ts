@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      background-color: ${(props) => props.theme.background};
+      background-color: ${(props) => props.theme.white};
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
@@ -54,7 +54,8 @@ export const Container = styled.div`
 `;
 
 export const ProductCard = styled.section`
-    padding: 0 0.5rem;
+    padding: 1rem 0;
+    margin: 1rem 0;
 
     .swiper-button-prev {
         color: ${(props) => props.theme.primary};
@@ -79,50 +80,6 @@ export const ProductCard = styled.section`
             align-items: center;
         }
     }
-`;
-
-export const fadeIn = keyframes`
-    from {
-      opacity: 0.4;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }  
-`;
-
-export const float = keyframes`
-    0% {
-      transform: translatey(0px);
-    }
-    50% {
-      transform: translatey(-20px);
-    }
-    100% {
-      transform: translatey(0px);
-    }
-`;
-
-export const spin = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-`;
-
-export const scrollAppear = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 `;
 
 export default GlobalStyle;

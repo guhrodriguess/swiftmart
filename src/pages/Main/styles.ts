@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { fadeIn, float } from "../../styles/global";
+import { fadeIn } from "../../styles/keyframes";
 
 export const MainComponent = styled.section`
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     padding: 0 0.5rem;
     animation: ${fadeIn} 0.6s ease;
+    background-color: ${(props) => props.theme.white};
 `;
 
 export const MainLayout = styled.div`
@@ -35,6 +36,7 @@ export const Content = styled.div`
     margin: 0 1rem;
     max-width: 600px;
     width: 100%;
+    align-items: start;
 
     @media (max-width: 940px) {
         text-align: center;
@@ -52,10 +54,13 @@ export const Content = styled.div`
         }
     }
 
+    a {
+        text-decoration: none;
+    }
+
     button {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
         padding: 1.2rem 2rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -63,8 +68,8 @@ export const Content = styled.div`
         background: ${(props) => props.theme.primary};
         color: ${(props) => props.theme.white};
         border: none;
-        cursor: pointer;
         transition: all 0.3s ease-in-out;
+        cursor: pointer;
 
         &:hover {
             background: ${(props) => props.theme.secondary};

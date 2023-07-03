@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { scrollAppear } from "../../styles/global";
+import { scrollAppear } from "../../styles/keyframes";
 import ScrollToTop from "react-scroll-to-top";
 
 export const ScrollComponent = styled(ScrollToTop)`

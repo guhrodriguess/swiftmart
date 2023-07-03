@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Pagination, Scrollbar, Navigation, A11y } from "swiper";
 import fetchProducts from "../../api/fetchProducts";
 import ProductItem from "../ProductItem";
 import { useState, useEffect } from "react";
@@ -29,16 +29,16 @@ export default function TvSlider() {
             <Swiper
                 navigation
                 grabCursor={true}
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Pagination, Scrollbar, Navigation, A11y]}
                 style={{ width: "100%", height: "max-content" }}
                 breakpoints={{
                     100: {
                         slidesPerView: 1,
-                        spaceBetween: 5,
+                        spaceBetween: 10,
                     },
                     500: {
                         slidesPerView: 2,
-                        spaceBetween: 5,
+                        spaceBetween: 10,
                     },
                     600: {
                         slidesPerView: 3,
@@ -50,9 +50,9 @@ export default function TvSlider() {
                     },
                 }}
             >
-                {products.map((product) => (
-                    <SwiperSlide key={product.id}>
-                        <ProductItem data={product} />
+                {products.slice(0, 30).map((product) => (
+                    <SwiperSlide>
+                        <ProductItem key={product.id} data={product} />
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HeaderComponent = styled.header`
     padding: 1rem 0.5rem;
-    background-color: ${(props) => props.theme.background};
+    background-color: ${(props) => props.theme.white};
     width: 100%;
 `;
 
