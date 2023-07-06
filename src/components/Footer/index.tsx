@@ -1,5 +1,7 @@
+// Styles
 import { FooterComponent, Content } from "./styles";
 
+// Footer Component
 export default function Footer() {
     return (
         <FooterComponent>

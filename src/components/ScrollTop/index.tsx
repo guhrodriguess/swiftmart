@@ -1,6 +1,8 @@
 // ScrollToTop
-import { CaretUp } from "@phosphor-icons/react";
 import ScrollToTop from "react-scroll-to-top";
+
+// Icon
+import { CaretUp } from "@phosphor-icons/react";
 
 // Scroll Top
 export default function ScrollTop() {

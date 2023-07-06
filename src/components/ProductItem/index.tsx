@@ -1,10 +1,22 @@
+// React Hooks
 import { useContext } from "react";
+
+// FormatCurrency Function
 import formatCurrency from "../../utils/formatCurrency";
+
+// Styles
 import { Content, ProductComponent, ImageWrapper } from "./styles";
+
+// Context
 import AppContext from "../../contexts/AppContext";
+
+// Toastify
 import { addProductAlert } from "../Toast";
+
+// Icon
 import { Plus } from "@phosphor-icons/react";
 
+// ProductItem Component
 export default function ProductItem({ data }) {
     const { thumbnail, title, price } = data;
 

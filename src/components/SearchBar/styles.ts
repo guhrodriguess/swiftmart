@@ -3,18 +3,17 @@ import styled from "styled-components";
 export const Form = styled.form`
     display: flex;
     justify-content: center;
-`;
-
-export const InputWrapper = styled.div`
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    position: relative;
     max-width: 500px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
 
     input {
         width: 100%;
+        flex-grow: 1;
         padding: 1rem 2rem 1rem 0.8rem;
         background: transparent;
         border: 1px solid ${(props) => props.theme.border};
@@ -31,10 +30,10 @@ export const InputWrapper = styled.div`
         align-items: center;
         justify-content: center;
         position: absolute;
+        right: 0;
         background: transparent;
         border: none;
         padding: 0rem 1rem;
-        right: 0;
         cursor: pointer;
     }
 `;

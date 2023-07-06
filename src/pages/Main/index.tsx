@@ -1,6 +1,8 @@
+// Styles
 import { MainComponent, MainLayout, Content } from "./styles";
 
-import mainImage from "/public/assets/home.png";
+// Image
+import homeImage from "/public/assets/home.png";
 
 export default function Main() {
     return (
@@ -17,7 +19,7 @@ export default function Main() {
                         </a>
                     </div>
                 </Content>
-                <img src={mainImage} alt="SwiftMart" />
+                <img src={homeImage} alt="SwiftMart" />
             </MainLayout>
         </MainComponent>
     );

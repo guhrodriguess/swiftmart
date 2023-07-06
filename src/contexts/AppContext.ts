@@ -1,6 +1,19 @@
+// React Hooks
 import { createContext } from "react";
-import { ContextProps } from "../interfaces/interfaces";
 
+// Interfaces
+import { Product } from "../interfaces/interfaces";
+
+interface ContextProps {
+    products: Product[];
+    setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+    cartItems: Product[];
+    setCartItems: React.Dispatch<React.SetStateAction<Product[]>>;
+    isCartVisible: boolean;
+    setIsCartVisible: (newState: boolean) => void;
+}
+
+// Initial Value
 const initialValue = {
     products: [],
     setProducts: () => undefined,
@@ -10,6 +23,7 @@ const initialValue = {
     setIsCartVisible: () => undefined,
 };
 
+// CreateContext Component
 const AppContext = createContext<ContextProps>(initialValue);
 
 export default AppContext;

@@ -145,7 +145,7 @@ export const CartResume = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 0 15px;
+    padding: 2.1875rem 0 0.938rem;
     border-top: 1px solid ${(props) => props.theme.gray};
 
     span {

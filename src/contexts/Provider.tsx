@@ -1,11 +1,18 @@
+// React Hooks
 import { ReactNode, useState, useEffect } from "react";
+
+// Context
 import AppContext from "./AppContext";
+
+// Interface
 import { Product } from "../interfaces/interfaces";
 
+// Type
 type ProviderProps = {
     children: ReactNode;
 };
 
+// Provider Component
 export default function Provider({ children }: ProviderProps) {
     const [products, setProducts] = useState<Product[]>([]);
     const [cartItems, setCartItems] = useState<Product[]>(() => {

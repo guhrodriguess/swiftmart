@@ -1,23 +1,43 @@
+// React Hooks
+import { useContext, useEffect, useState } from "react";
+
+// Context
 import AppContext from "../../contexts/AppContext";
+
+// Styles
 import {
     PurchaseComponent,
     PurchaseWrapper,
     Title,
     CartList,
+    CartResume,
     ConfirmComponent,
     ModalComponent,
     ModalWrapper,
     Modal,
     Info,
 } from "./styles";
+
+// CartItem Component
 import { CartItem } from "../../components/CartItem";
-import { useContext, useState } from "react";
+
+// Icons
 import { ArrowLeft, Check } from "@phosphor-icons/react";
+
+// React Router
 import { Link } from "react-router-dom";
 
-export default function PurchasePage() {
+// FormatCurrency Function
+import formatCurrency from "../../utils/formatCurrency";
+
+// Purchase Page
+export default function PurchasePage({ title }) {
     const { cartItems, setCartItems } = useContext(AppContext);
     const [isModalVisible, setIsModalVisible] = useState(false);
+
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
 
     const handleModal = () => {
         setIsModalVisible(true);
@@ -28,6 +48,11 @@ export default function PurchasePage() {
             document.body.style.overflow = "auto";
         }
     };
+
+    const totalPrice = cartItems.reduce<string | number>(
+        (acc, item) => item.price + acc,
+        0
+    );
 
     const clearCart = () => {
         setCartItems([]);
@@ -48,6 +73,12 @@ export default function PurchasePage() {
                             <CartItem key={cartItem.id} data={cartItem} />
                         ))}
                     </CartList>
+                    <CartResume>
+                        <p>
+                            Total <span id="divider">&mdash;</span>{" "}
+                            <span>{formatCurrency(totalPrice)}</span>
+                        </p>
+                    </CartResume>
                     <ConfirmComponent>
                         <button onClick={handleModal}>confirmar compra</button>
                     </ConfirmComponent>
@@ -63,9 +94,13 @@ export default function PurchasePage() {
                                     <button>
                                         <Check weight="bold" size={30} />
                                     </button>
-                                    <h2>Sucesso!</h2>
+                                    <h2>Sucesso</h2>
                                 </div>
-                                <p>Sua compra foi realizada.</p>
+                                <p>
+                                    Sua compra no valor de{" "}
+                                    <span>{formatCurrency(totalPrice)}</span>{" "}
+                                    foi efetuada!
+                                </p>
                                 <Link to="/">
                                     <button id="back" onClick={clearCart}>
                                         <ArrowLeft

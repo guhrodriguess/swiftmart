@@ -21,9 +21,15 @@ export const PurchaseWrapper = styled.div`
     place-items: center;
     margin-top: 5rem;
     animation: ${fadeIn} 0.6s ease;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0.5rem;
 `;
 
 export const Title = styled.h1`
+    margin-bottom: 1.5rem;
+
     hr {
         width: 100%;
         height: 5px;
@@ -34,13 +40,36 @@ export const Title = styled.h1`
 `;
 
 export const CartList = styled.div`
-    padding: 2rem 0;
+    max-height: 400px;
+    height: 100%;
     flex-grow: 1;
     overflow: auto;
-    max-height: 500px;
-    max-width: 400px;
+    margin-top: 2rem;
+    margin: 0 1.5rem;
+`;
+
+export const CartResume = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.1875rem 0;
     width: 100%;
-    height: 100%;
+    border-top: 1px solid ${(props) => props.theme.gray};
+
+    p {
+        font-weight: 600;
+        font-size: 0.9rem;
+
+        #divider {
+            user-select: none;
+        }
+
+        span {
+            color: ${(props) => props.theme.primary};
+            font-size: 1rem;
+            font-weight: 700;
+        }
+    }
 `;
 
 export const ConfirmComponent = styled.div`
@@ -96,8 +125,11 @@ export const Info = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 100%;
     gap: 1rem;
+    max-width: 200px;
+    margin: 0 auto;
 
     button {
         display: flex;
@@ -120,6 +152,11 @@ export const Info = styled.div`
         font-weight: 500;
         margin: 0.4rem 0;
         font-size: 0.9rem;
+
+        span {
+            font-weight: 600;
+            color: ${(props) => props.theme.primary};
+        }
     }
 
     #back {

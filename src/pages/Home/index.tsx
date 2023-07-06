@@ -1,11 +1,22 @@
+// React Hooks
+import { useEffect } from "react";
+
+// Slider Components
 import GameSlider from "../../components/GameSlider";
 import HardwareSlider from "../../components/HardwareSlider";
 import PhoneSlider from "../../components/PhoneSlider";
 import TechSlider from "../../components/TechSlider";
 import TvSlider from "../../components/TvSlider";
+
+// Main Component
 import Main from "../Main";
 
-export default function Home() {
+// Home Page
+export default function Home({ title }) {
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
+
     return (
         <>
             <Main />
