@@ -21,6 +21,10 @@ export const Content = styled.div`
     align-items: center;
     gap: 0.6rem;
 
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
+
     h1 {
         font-size: 1.7rem;
         color: ${(props) => props.theme.white};
@@ -29,6 +33,10 @@ export const Content = styled.div`
     h3 {
         user-select: none;
         color: ${(props) => props.theme.white};
+
+        @media (max-width: 500px) {
+            display: none;
+        }
     }
 
     p {

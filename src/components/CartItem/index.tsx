@@ -2,7 +2,7 @@ import { TrashSimple } from "@phosphor-icons/react";
 import { CartWrapper, Content, Image } from "./styles";
 import formatCurrency from "../../utils/formatCurrency";
 import { useContext } from "react";
-import AppContext from "../../contexts/appContext";
+import AppContext from "../../contexts/AppContext";
 
 export function CartItem({ data }) {
     const { cartItems, setCartItems } = useContext(AppContext);

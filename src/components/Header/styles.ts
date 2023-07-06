@@ -28,3 +28,15 @@ export const NavLogo = styled(Link)`
         }
     }
 `;
+
+export const PageOpacity = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    background-color: ${(props) => props.theme.black_opacity};
+    backdrop-filter: blur(5px);
+`;

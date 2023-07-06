@@ -13,6 +13,7 @@ export const Details = styled.div`
     h3 {
         span {
             color: ${(props) => props.theme.primary};
+            padding-bottom: 4px;
             border-bottom: 4px solid ${(props) => props.theme.primary};
             text-transform: capitalize;
         }

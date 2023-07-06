@@ -10,10 +10,10 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    max-width: 500px;
     width: 100%;
 
     input {
-        max-width: 500px;
         width: 100%;
         padding: 1rem 2rem 1rem 0.8rem;
         background: transparent;
@@ -23,10 +23,6 @@ export const InputWrapper = styled.div`
 
         &:focus {
             outline: 2px solid ${(props) => props.theme.primary};
-        }
-
-        ::-webkit-search-cancel-button {
-            -webkit-appearance: none;
         }
     }
 

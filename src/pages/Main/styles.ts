@@ -4,7 +4,6 @@ import { fadeIn } from "../../styles/keyframes";
 export const MainComponent = styled.section`
     width: 100%;
     height: 70vh;
-    padding: 0 0.5rem;
     animation: ${fadeIn} 0.6s ease;
     background-color: ${(props) => props.theme.white};
 `;

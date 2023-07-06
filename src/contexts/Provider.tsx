@@ -1,23 +1,22 @@
-import React, { useState, ReactNode } from "react";
-import AppContext from "./appContext";
+import { ReactNode, useState, useEffect } from "react";
+import AppContext from "./AppContext";
+import { Product } from "../interfaces/interfaces";
 
-interface ProviderProps {
+type ProviderProps = {
     children: ReactNode;
-    products: string[];
-    setProducts: React.Dispatch<React.SetStateAction<string[]>>;
-    cartItems: string[];
-    setCartItems: React.Dispatch<React.SetStateAction<string[]>>;
-    isCartVisible: boolean;
-    setIsCartVisible: React.Dispatch<React.SetStateAction<boolean>>;
-    isLoading: boolean;
-    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
 export default function Provider({ children }: ProviderProps) {
-    const [products, setProducts] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
+    const [products, setProducts] = useState<Product[]>([]);
+    const [cartItems, setCartItems] = useState<Product[]>(() => {
+        const savedProducts = localStorage.getItem("cartItems");
+        return savedProducts ? JSON.parse(savedProducts) : [];
+    });
     const [isCartVisible, setIsCartVisible] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const value = {
         products,
@@ -26,8 +25,6 @@ export default function Provider({ children }: ProviderProps) {
         setCartItems,
         isCartVisible,
         setIsCartVisible,
-        isLoading,
-        setIsLoading,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

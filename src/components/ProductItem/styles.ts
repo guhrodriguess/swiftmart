@@ -7,8 +7,9 @@ export const ProductComponent = styled.div`
     padding: 0rem 1.5rem;
     overflow: hidden;
     background-color: ${(props) => props.theme.white};
-    box-shadow: rgba(0, 0, 0, 0.4) -2px 15px 26px -14px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 15px;
+    user-select: none;
 `;
 
 export const ImageWrapper = styled.div`

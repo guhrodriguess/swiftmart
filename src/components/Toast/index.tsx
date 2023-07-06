@@ -31,6 +31,7 @@ const Toast = () => {
 };
 
 // Download Alert
+// eslint-disable-next-line react-refresh/only-export-components
 export const addProductAlert = () => {
     toast.success("Adicionado ao carrinho!", {
         icon: (

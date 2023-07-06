@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
     input {
       user-select: none;
     }
+
+    a {
+      text-decoration: none;
+    }
 `;
 
 export const Container = styled.div`

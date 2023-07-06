@@ -1,15 +1,19 @@
 import { useContext } from "react";
 import { CartItem } from "../CartItem";
 import { CartWrapper, Info, CartList, CartResume, PageOpacity } from "./styles";
-import AppContext from "../../contexts/appContext";
+import AppContext from "../../contexts/AppContext";
 import formatCurrency from "../../utils/formatCurrency";
-import { X } from "@phosphor-icons/react";
+import { ArrowRight, X } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
     const { cartItems, setCartItems, isCartVisible, setIsCartVisible } =
         useContext(AppContext);
 
-    const totalPrice = cartItems.reduce((acc, item) => item.price + acc, 0);
+    const totalPrice = cartItems.reduce<string | number>(
+        (acc, item) => item.price + acc,
+        0
+    );
 
     const handleRemoveAllItems = () => {
         setCartItems([]);
@@ -25,8 +29,8 @@ export default function Cart() {
             <CartWrapper
                 style={
                     isCartVisible
-                        ? { transform: "translate(0, 0)" }
-                        : { transform: "translate(120%, 0)" }
+                        ? { transform: "translateX(0)" }
+                        : { transform: "translateX(120%)" }
                 }
             >
                 <Info>
@@ -59,7 +63,16 @@ export default function Cart() {
                     <span>Total de Produtos ({cartItems.length})</span>
                     <p>{formatCurrency(totalPrice)}</p>
                 </CartResume>
+                {cartItems.length > 0 && (
+                    <Link to="/purchase">
+                        <button id="buy" onClick={handleCloseCartBar}>
+                            finalizar compra{" "}
+                            <ArrowRight weight="bold" id="arrowRight" />
+                        </button>
+                    </Link>
+                )}
             </CartWrapper>
+
             {isCartVisible && <PageOpacity />}
         </>
     );

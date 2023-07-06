@@ -4,9 +4,10 @@ import fetchProducts from "../../api/fetchProducts";
 import ProductItem from "../ProductItem";
 import { useState, useEffect } from "react";
 import { ProductCard } from "../../styles/global";
+import { Product } from "../../interfaces/interfaces";
 
 export default function GameSlider() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         fetchProducts("games").then((response) => {
@@ -34,7 +35,7 @@ export default function GameSlider() {
                         slidesPerView: 2,
                         spaceBetween: 10,
                     },
-                    600: {
+                    941: {
                         slidesPerView: 3,
                         spaceBetween: 10,
                     },
@@ -45,8 +46,8 @@ export default function GameSlider() {
                 }}
             >
                 {products.slice(0, 30).map((product) => (
-                    <SwiperSlide>
-                        <ProductItem key={product.id} data={product} />
+                    <SwiperSlide key={product.id}>
+                        <ProductItem data={product} />
                     </SwiperSlide>
                 ))}
             </Swiper>

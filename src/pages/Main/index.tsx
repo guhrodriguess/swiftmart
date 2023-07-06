@@ -1,7 +1,6 @@
-import { MouseSimple } from "@phosphor-icons/react";
 import { MainComponent, MainLayout, Content } from "./styles";
 
-import SMImage from "/public/assets/home.png";
+import mainImage from "/public/assets/home.png";
 
 export default function Main() {
     return (
@@ -18,7 +17,7 @@ export default function Main() {
                         </a>
                     </div>
                 </Content>
-                <img src={SMImage} alt="SwiftMart" />
+                <img src={mainImage} alt="SwiftMart" />
             </MainLayout>
         </MainComponent>
     );

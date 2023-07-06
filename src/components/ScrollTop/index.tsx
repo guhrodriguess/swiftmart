@@ -1,11 +1,11 @@
 // ScrollToTop
 import { CaretUp } from "@phosphor-icons/react";
-import { ScrollComponent } from "./styles";
+import ScrollToTop from "react-scroll-to-top";
 
 // Scroll Top
 export default function ScrollTop() {
     return (
-        <ScrollComponent
+        <ScrollToTop
             smooth
             top="20"
             component={<CaretUp weight="bold" color="#fff" size={26} />}

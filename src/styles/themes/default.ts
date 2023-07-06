@@ -11,4 +11,5 @@ export const defaultTheme = {
     red: "#FF0000",
     gray: "#DDD",
     gray_999: "#999",
+    success: "#22c55e",
 } as const;

@@ -4,15 +4,10 @@ import fetchProducts from "../../api/fetchProducts";
 import ProductItem from "../ProductItem";
 import { useState, useEffect } from "react";
 import { ProductCard } from "../../styles/global";
-
-interface SliderProps {
-    products?: string[];
-    setProducts?: React.Dispatch<React.SetStateAction<string[]>>;
-    id: string;
-}
+import { Product } from "../../interfaces/interfaces";
 
 export default function TvSlider() {
-    const [products, setProducts] = useState<SliderProps[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         fetchProducts("tv").then((response) => {
@@ -40,7 +35,7 @@ export default function TvSlider() {
                         slidesPerView: 2,
                         spaceBetween: 10,
                     },
-                    600: {
+                    941: {
                         slidesPerView: 3,
                         spaceBetween: 10,
                     },
@@ -51,8 +46,8 @@ export default function TvSlider() {
                 }}
             >
                 {products.slice(0, 30).map((product) => (
-                    <SwiperSlide>
-                        <ProductItem key={product.id} data={product} />
+                    <SwiperSlide key={product.id}>
+                        <ProductItem data={product} />
                     </SwiperSlide>
                 ))}
             </Swiper>

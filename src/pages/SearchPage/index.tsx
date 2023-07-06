@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import AppContext from "../../contexts/appContext";
+import AppContext from "../../contexts/AppContext";
 import { Section, ProductList, Details } from "./style";
 import ProductItem from "../../components/ProductItem";
 import fetchProducts from "../../api/fetchProducts";
@@ -9,13 +9,13 @@ export default function SearchPage() {
     const { products, setProducts } = useContext(AppContext);
 
     const [searchParams] = useSearchParams();
-    const query = searchParams.get("q");
+    const query = searchParams.get("q") ?? "";
 
     useEffect(() => {
         fetchProducts(query).then((response) => {
             setProducts(response);
         });
-    }, [query]);
+    });
 
     return (
         <Section>

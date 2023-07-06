@@ -12,7 +12,7 @@ export const CartWrapper = styled.div`
     top: 0;
     right: 0;
     padding: 1rem 1.5rem;
-    background-color: ${(props) => props.theme.background};
+    background-color: ${(props) => props.theme.white};
     transition: all 400ms ease;
     border-radius: 25px 0 0 25px;
 
@@ -23,7 +23,7 @@ export const CartWrapper = styled.div`
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: ${(props) => props.theme.gray};
-        border: 3.5px solid ${(props) => props.theme.background};
+        border: 3.5px solid ${(props) => props.theme.white};
     }
 
     hr {
@@ -51,6 +51,47 @@ export const CartWrapper = styled.div`
         &:hover {
             color: ${(props) => props.theme.red};
         }
+    }
+
+    #buy {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        gap: 0.2rem;
+        color: ${(props) => props.theme.secondary};
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 5px;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            display: block;
+            background: ${(props) => props.theme.primary};
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: 0;
+            transition: all 0.2s ease-in-out;
+
+            @media (max-width: 940px) {
+                height: 0px;
+            }
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
+        &:hover #arrowRight {
+            color: ${(props) => props.theme.primary};
+            transform: translateX(2px);
+        }
+    }
+
+    #arrowRight {
+        transition: all 0.2s ease-in-out;
     }
 `;
 
@@ -127,5 +168,4 @@ export const PageOpacity = styled.div`
     left: 0;
     z-index: 998;
     background-color: ${(props) => props.theme.black_opacity};
-    backdrop-filter: blur(5px);
 `;

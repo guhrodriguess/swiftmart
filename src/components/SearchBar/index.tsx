@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { Form, InputWrapper } from "./styles";
 import fetchProducts from "../../api/fetchProducts";
-import AppContext from "../../contexts/appContext";
+import AppContext from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBar() {

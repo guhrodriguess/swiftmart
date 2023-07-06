@@ -1,11 +1,10 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 import { Button } from "./styles";
 import { useContext } from "react";
-import AppContext from "../../contexts/appContext";
+import AppContext from "../../contexts/AppContext";
 
 export default function CartButton() {
-    const { cartItems, isCartVisible, setIsCartVisible } =
-        useContext(AppContext);
+    const { cartItems, setIsCartVisible } = useContext(AppContext);
 
     const handleCartBar = () => {
         setIsCartVisible(true);
