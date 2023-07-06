@@ -1,6 +1,6 @@
 <div align="center">
 
-![Portfolio image](./public/assets/swiftmart.png)
+![Portfolio image](./public/assets/readme.png)
 
 </div>
 
