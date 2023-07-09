@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fadeIn } from "../../styles/keyframes";
+import { fadeIn } from "@/styles/global";
 
 export const PurchaseComponent = styled.section`
     width: 100%;

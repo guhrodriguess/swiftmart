@@ -6,16 +6,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Scrollbar, Navigation, A11y } from "swiper";
 
 // FetchProducts Function
-import fetchProducts from "../../api/fetchProducts";
+import fetchProducts from "@/api/fetchProducts";
 
 // ProductItem Component
-import ProductItem from "../ProductItem";
+import ProductItem from "@/components/ProductItem";
 
 // Styles
-import { ProductCard } from "../../styles/global";
+import { ProductCard } from "@/styles/global";
 
 // Interface
-import { Product } from "../../interfaces/interfaces";
+import { Product } from "@/interfaces/product";
 
 // GameSlider Component
 export default function GameSlider() {

@@ -2,16 +2,16 @@
 import { useContext, useEffect } from "react";
 
 // Context
-import AppContext from "../../contexts/AppContext";
+import AppContext from "@/contexts/AppContext";
 
 // Styles
 import { Section, ProductList, Details } from "./styles";
 
 // ProductItem Component
-import ProductItem from "../../components/ProductItem";
+import ProductItem from "@/components/ProductItem";
 
 // FetchProducts Function
-import fetchProducts from "../../api/fetchProducts";
+import fetchProducts from "@/api/fetchProducts";
 
 // React Router
 import { useSearchParams } from "react-router-dom";

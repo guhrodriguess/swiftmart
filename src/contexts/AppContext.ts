@@ -2,7 +2,7 @@
 import { createContext } from "react";
 
 // Interfaces
-import { Product } from "../interfaces/interfaces";
+import { Product } from "@/interfaces/product";
 
 interface ContextProps {
     products: Product[];

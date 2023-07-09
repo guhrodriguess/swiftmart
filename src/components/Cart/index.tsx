@@ -2,16 +2,16 @@
 import { useContext, useEffect, useRef } from "react";
 
 // CartItem Component
-import { CartItem } from "../CartItem";
+import { CartItem } from "@/components/CartItem";
 
 // Styles
 import { CartWrapper, Info, CartList, CartResume, PageOpacity } from "./styles";
 
 // Context
-import AppContext from "../../contexts/AppContext";
+import AppContext from "@/contexts/AppContext";
 
 // FormatCurrency Function
-import formatCurrency from "../../utils/formatCurrency";
+import formatCurrency from "@/utils/formatCurrency";
 
 // Icons
 import { ArrowRight, X } from "@phosphor-icons/react";

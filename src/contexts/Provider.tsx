@@ -5,7 +5,7 @@ import { ReactNode, useState, useEffect } from "react";
 import AppContext from "./AppContext";
 
 // Interface
-import { Product } from "../interfaces/interfaces";
+import { Product } from "@/interfaces/product";
 
 // Type
 type ProviderProps = {

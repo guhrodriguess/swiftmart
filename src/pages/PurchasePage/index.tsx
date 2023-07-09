@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 
 // Context
-import AppContext from "../../contexts/AppContext";
+import AppContext from "@/contexts/AppContext";
 
 // Styles
 import {
@@ -19,7 +19,7 @@ import {
 } from "./styles";
 
 // CartItem Component
-import { CartItem } from "../../components/CartItem";
+import { CartItem } from "@/components/CartItem";
 
 // Icons
 import { ArrowLeft, Check } from "@phosphor-icons/react";
@@ -28,7 +28,7 @@ import { ArrowLeft, Check } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
 // FormatCurrency Function
-import formatCurrency from "../../utils/formatCurrency";
+import formatCurrency from "@/utils/formatCurrency";
 
 // Purchase Page
 export default function PurchasePage({ title }) {

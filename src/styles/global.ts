@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -84,6 +84,17 @@ export const ProductCard = styled.section`
             align-items: center;
         }
     }
+`;
+
+export const fadeIn = keyframes`
+    from {
+      opacity: 0.4;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }  
 `;
 
 export default GlobalStyle;

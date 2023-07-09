@@ -1,8 +1,8 @@
 // CartButton Component
-import CartButton from "../CartButton";
+import CartButton from "@/components/CartButton";
 
 // SearchBar Component
-import SearchBar from "../SearchBar";
+import SearchBar from "@/components/SearchBar";
 
 // Styles
 import { HeaderComponent, Nav, NavLogo } from "./styles";

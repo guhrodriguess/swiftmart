@@ -8,7 +8,7 @@ import { ShoppingCart } from "@phosphor-icons/react";
 import { Button } from "./styles";
 
 // Context
-import AppContext from "../../contexts/AppContext";
+import AppContext from "@/contexts/AppContext";
 
 // CartButton Component
 export default function CartButton() {

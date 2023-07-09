@@ -8,10 +8,10 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 import { Form } from "./styles";
 
 // FetchProducts Function
-import fetchProducts from "../../api/fetchProducts";
+import fetchProducts from "@/api/fetchProducts";
 
 // Context
-import AppContext from "../../contexts/AppContext";
+import AppContext from "@/contexts/AppContext";
 
 // React Router
 import { useNavigate } from "react-router-dom";
