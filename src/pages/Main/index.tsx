@@ -13,11 +13,9 @@ export default function Main() {
                         A <span>velocidade</span> dos seus desejos em um{" "}
                         <span>clique!</span>
                     </h1>
-                    <div className="buttons">
-                        <a href="#product">
-                            <button>Conheça os produtos </button>
-                        </a>
-                    </div>
+                    <a href="#product">
+                        <button>Conheça os produtos </button>
+                    </a>
                 </Content>
                 <img src={homeImage} alt="SwiftMart" />
             </MainLayout>

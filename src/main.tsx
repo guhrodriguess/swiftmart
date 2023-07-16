@@ -14,7 +14,12 @@ import GlobalStyle, { Container } from "./styles/global.ts";
 import Provider from "./contexts/Provider";
 
 // React Router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
 
 // Components
 import Header from "./components/Header";
@@ -30,6 +35,7 @@ import SearchPage from "./pages/SearchPage";
 
 // Private Route
 import PrivateRoute from "./routes/PrivateRoute";
+import NotFound from "./pages/NotFound/index.tsx";
 
 // Main
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -55,6 +61,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                                 </PrivateRoute>
                             }
                         />
+                        <Route
+                            path="/404"
+                            element={<NotFound title="SwiftMart — Not Found" />}
+                        />
+                        <Route path="*" element={<Navigate to="/404" />} />
                     </Routes>
                 </Provider>
                 <ScrollTop />

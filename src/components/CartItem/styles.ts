@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CartWrapper = styled.section`
+export const CartWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     border-bottom: 1px solid ${(props) => props.theme.gray};

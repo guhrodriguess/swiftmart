@@ -60,6 +60,7 @@ export const Content = styled.div`
     button {
         display: flex;
         align-items: center;
+        margin: 2rem 0;
         padding: 1.2rem 2rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -73,9 +74,5 @@ export const Content = styled.div`
         &:hover {
             background: ${(props) => props.theme.secondary};
         }
-    }
-
-    .buttons {
-        margin: 2rem 0;
     }
 `;
