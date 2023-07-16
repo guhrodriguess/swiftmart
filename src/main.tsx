@@ -32,10 +32,10 @@ import ScrollTop from "./components/ScrollTop";
 import Home from "./pages/Home";
 import PurchasePage from "./pages/PurchasePage";
 import SearchPage from "./pages/SearchPage";
+import NotFound from "./pages/NotFound/index.tsx";
 
 // Private Route
 import PrivateRoute from "./routes/PrivateRoute";
-import NotFound from "./pages/NotFound/index.tsx";
 
 // Main
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
