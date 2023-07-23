@@ -8,5 +8,5 @@ export default function PrivateRoute({ children }: RouteProps) {
 
     const hasCartItems = myObject && Object.keys(myObject).length > 0;
 
-    return hasCartItems ? children : <Navigate to="/" replace />;
+    return <>{hasCartItems ? { children } : <Navigate to="/" replace />}</>;
 }
