@@ -1,6 +1,6 @@
 import * as Styles from "./styles";
 
-import homeImage from "/public/assets/home.png";
+import homeImage from "@/assets/home.png";
 
 export default function Main() {
     return (

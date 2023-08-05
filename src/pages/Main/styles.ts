@@ -33,10 +33,8 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin: 0 1rem;
     max-width: 600px;
     width: 100%;
-    align-items: start;
 
     @media (max-width: 940px) {
         text-align: center;
