@@ -1,19 +1,13 @@
-// React Hooks
 import { useContext } from "react";
 
-// Context
 import AppContext from "@/contexts/AppContext";
 
-// Styles
-import { CartWrapper, Content, Image } from "./styles";
+import * as Styles from "./styles";
 
-// Icon
 import { TrashSimple } from "@phosphor-icons/react";
 
-// FormatCurrency Function
 import formatCurrency from "@/utils/formatCurrency";
 
-// CartItem Commponent
 export function CartItem({ data }) {
     const { cartItems, setCartItems } = useContext(AppContext);
     const { id, thumbnail, title, price } = data;
@@ -24,15 +18,15 @@ export function CartItem({ data }) {
     };
 
     return (
-        <CartWrapper>
-            <Image src={thumbnail} alt="Imagem do Produto" />
-            <Content>
+        <Styles.CartWrapper>
+            <Styles.Image src={thumbnail} alt="Imagem do Produto" />
+            <Styles.Content>
                 <h3>{title}</h3>
                 <span>{formatCurrency(price)}</span>
                 <button onClick={handleRemoveItem}>
                     <TrashSimple weight="bold" size={20} />
                 </button>
-            </Content>
-        </CartWrapper>
+            </Styles.Content>
+        </Styles.CartWrapper>
     );
 }

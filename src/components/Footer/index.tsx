@@ -1,11 +1,9 @@
-// Styles
-import { FooterComponent, Content } from "./styles";
+import * as Styles from "./styles";
 
-// Footer Component
 export default function Footer() {
     return (
-        <FooterComponent>
-            <Content>
+        <Styles.FooterComponent>
+            <Styles.Content>
                 <h1>SwiftMart.</h1>
                 <h3>&mdash;</h3>
                 <p>
@@ -14,7 +12,7 @@ export default function Footer() {
                         Gustavo Rodrigues
                     </a>
                 </p>
-            </Content>
-        </FooterComponent>
+            </Styles.Content>
+        </Styles.FooterComponent>
     );
 }

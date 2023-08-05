@@ -32,6 +32,7 @@ export const MainLayout = styled.div`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     margin: 0 1rem;
     max-width: 600px;
     width: 100%;
@@ -60,7 +61,6 @@ export const Content = styled.div`
     button {
         display: flex;
         align-items: center;
-        margin: 2rem 0;
         padding: 1.2rem 2rem;
         font-weight: 600;
         text-transform: uppercase;

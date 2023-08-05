@@ -1,11 +1,8 @@
-// React Toastify
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Icon
 import { CheckCircle } from "@phosphor-icons/react";
 
-// Toast Container
 const Toast = () => {
     return (
         <ToastContainer
@@ -30,7 +27,6 @@ const Toast = () => {
     );
 };
 
-// Download Alert
 // eslint-disable-next-line react-refresh/only-export-components
 export const addProductAlert = () => {
     toast.success("Adicionado ao carrinho!", {

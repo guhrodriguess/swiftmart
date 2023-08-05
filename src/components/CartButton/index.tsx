@@ -1,16 +1,11 @@
-// React Hooks
 import { useContext } from "react";
 
-// Icon
 import { ShoppingCart } from "@phosphor-icons/react";
 
-// Styles
-import { Button } from "./styles";
+import * as Styles from "./styles";
 
-// Context
 import AppContext from "@/contexts/AppContext";
 
-// CartButton Component
 export default function CartButton() {
     const { cartItems, setIsCartVisible } = useContext(AppContext);
 
@@ -20,9 +15,9 @@ export default function CartButton() {
     };
 
     return (
-        <Button onClick={handleCartBar}>
+        <Styles.Button onClick={handleCartBar}>
             <ShoppingCart weight="bold" size={28} />
             {cartItems.length > 0 && <span>{cartItems.length}</span>}
-        </Button>
+        </Styles.Button>
     );
 }

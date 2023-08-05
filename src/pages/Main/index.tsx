@@ -1,14 +1,12 @@
-// Styles
-import { MainComponent, MainLayout, Content } from "./styles";
+import * as Styles from "./styles";
 
-// Image
 import homeImage from "/public/assets/home.png";
 
 export default function Main() {
     return (
-        <MainComponent>
-            <MainLayout>
-                <Content>
+        <Styles.MainComponent>
+            <Styles.MainLayout>
+                <Styles.Content>
                     <h1>
                         A <span>velocidade</span> dos seus desejos em um{" "}
                         <span>clique!</span>
@@ -16,9 +14,9 @@ export default function Main() {
                     <a href="#product">
                         <button>Conheça os produtos </button>
                     </a>
-                </Content>
+                </Styles.Content>
                 <img src={homeImage} alt="SwiftMart" />
-            </MainLayout>
-        </MainComponent>
+            </Styles.MainLayout>
+        </Styles.MainComponent>
     );
 }

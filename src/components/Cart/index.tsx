@@ -1,47 +1,20 @@
-// React Hooks
-import { useContext, useEffect, useRef } from "react";
+import { useContext } from "react";
 
-// CartItem Component
 import { CartItem } from "@/components/CartItem";
 
-// Styles
-import { CartWrapper, Info, CartList, CartResume, PageOpacity } from "./styles";
+import * as Styles from "./styles";
 
-// Context
 import AppContext from "@/contexts/AppContext";
 
-// FormatCurrency Function
 import formatCurrency from "@/utils/formatCurrency";
 
-// Icons
 import { ArrowRight, X } from "@phosphor-icons/react";
 
-// React Router
 import { Link } from "react-router-dom";
 
-// Cart Component
 export default function Cart() {
     const { cartItems, setCartItems, isCartVisible, setIsCartVisible } =
         useContext(AppContext);
-    const isCartRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (
-                isCartRef &&
-                !isCartRef.current?.contains(event.target as Node)
-            ) {
-                setIsCartVisible(false);
-                document.body.style.overflow = "auto";
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [setIsCartVisible]);
 
     const totalPrice = cartItems.reduce<string | number>(
         (acc, item) => item.price + acc,
@@ -59,15 +32,14 @@ export default function Cart() {
 
     return (
         <>
-            <CartWrapper
+            <Styles.CartWrapper
                 style={
                     isCartVisible
                         ? { transform: "translateX(0)" }
                         : { transform: "translateX(120%)" }
                 }
-                ref={isCartRef}
             >
-                <Info>
+                <Styles.Info>
                     <div>
                         <h4>
                             Carrinho{" "}
@@ -84,19 +56,19 @@ export default function Cart() {
                             </button>
                         )}
                     </div>
-                </Info>
+                </Styles.Info>
                 <button id="close" onClick={handleCloseCartBar}>
                     <X weight="bold" size={24} />
                 </button>
-                <CartList>
+                <Styles.CartList>
                     {cartItems.map((cartItem) => (
                         <CartItem key={cartItem.id} data={cartItem} />
                     ))}
-                </CartList>
-                <CartResume>
+                </Styles.CartList>
+                <Styles.CartResume>
                     <span>Total de Produtos ({cartItems.length})</span>
                     <p>{formatCurrency(totalPrice)}</p>
-                </CartResume>
+                </Styles.CartResume>
                 {cartItems.length > 0 && (
                     <Link to="/purchase">
                         <button id="buy" onClick={handleCloseCartBar}>
@@ -105,9 +77,11 @@ export default function Cart() {
                         </button>
                     </Link>
                 )}
-            </CartWrapper>
+            </Styles.CartWrapper>
 
-            {isCartVisible && <PageOpacity />}
+            {isCartVisible && (
+                <Styles.PageOpacity onClick={handleCloseCartBar} />
+            )}
         </>
     );
 }

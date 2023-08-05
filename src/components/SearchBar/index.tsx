@@ -1,22 +1,15 @@
-// React Hooks
 import React, { useContext, useState } from "react";
 
-// Icons
 import { MagnifyingGlass } from "@phosphor-icons/react";
 
-// Styles
-import { Form } from "./styles";
+import * as Styles from "./styles";
 
-// FetchProducts Function
 import fetchProducts from "@/api/fetchProducts";
 
-// Context
 import AppContext from "@/contexts/AppContext";
 
-// React Router
 import { useNavigate } from "react-router-dom";
 
-// SearchBar Component
 export default function SearchBar() {
     const [searchValue, setSearchValue] = useState("");
 
@@ -36,7 +29,7 @@ export default function SearchBar() {
     };
 
     return (
-        <Form onSubmit={handleSearch}>
+        <Styles.Form onSubmit={handleSearch}>
             <input
                 type="search"
                 placeholder="Buscar produto"
@@ -47,6 +40,6 @@ export default function SearchBar() {
             <button type="submit">
                 <MagnifyingGlass weight="bold" size={20} />
             </button>
-        </Form>
+        </Styles.Form>
     );
 }

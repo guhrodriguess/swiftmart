@@ -1,8 +1,6 @@
-// React Hooks
 import { createContext } from "react";
 
-// Interfaces
-import { Product } from "@/interfaces/product";
+import { Product } from "@/types/product";
 
 interface ContextProps {
     products: Product[];
@@ -13,7 +11,6 @@ interface ContextProps {
     setIsCartVisible: (newState: boolean) => void;
 }
 
-// Initial Value
 const initialValue = {
     products: [],
     setProducts: () => undefined,
@@ -23,7 +20,6 @@ const initialValue = {
     setIsCartVisible: () => undefined,
 };
 
-// CreateContext Component
 const AppContext = createContext<ContextProps>(initialValue);
 
 export default AppContext;

@@ -1,44 +1,27 @@
-// React
 import ReactDOM from "react-dom/client";
 
-// Styled Components
 import { ThemeProvider } from "styled-components";
 
-// Variables for Style
-import { defaultTheme } from "./styles/themes/default.ts";
+import { defaultTheme } from "@/styles/themes/default.ts";
+import GlobalStyle, { Container } from "@/styles/global.ts";
 
-// Styles
-import GlobalStyle, { Container } from "./styles/global.ts";
+import { BrowserRouter as Router } from "react-router-dom";
 
-// Context
-import Provider from "./contexts/Provider";
+import Provider from "@/contexts/Provider";
 
-// React Router
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate,
-} from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
+import Toast from "@/components/Toast";
+import ScrollTop from "@/components/ScrollTop";
 
-// Components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Cart from "./components/Cart";
-import Toast from "./components/Toast";
-import ScrollTop from "./components/ScrollTop";
+import { AllRoutes } from "./routes";
 
-// Pages
-import Home from "./pages/Home";
-import PurchasePage from "./pages/PurchasePage";
-import SearchPage from "./pages/SearchPage";
-import NotFound from "./pages/NotFound/index.tsx";
+const root = ReactDOM.createRoot(
+    document.getElementById("root") as HTMLElement
+);
 
-// Private Route
-import PrivateRoute from "./routes/PrivateRoute";
-
-// Main
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+root.render(
     <Router>
         <ThemeProvider theme={defaultTheme}>
             <GlobalStyle />
@@ -47,26 +30,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                 <Provider>
                     <Header />
                     <Cart />
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={<Home title="SwiftMart — Início" />}
-                        />
-                        <Route path="/search" element={<SearchPage />} />
-                        <Route
-                            path="/purchase"
-                            element={
-                                <PrivateRoute>
-                                    <PurchasePage title="SwiftMart — Finalizar Compra" />
-                                </PrivateRoute>
-                            }
-                        />
-                        <Route
-                            path="/404"
-                            element={<NotFound title="SwiftMart — Not Found" />}
-                        />
-                        <Route path="*" element={<Navigate to="/404" />} />
-                    </Routes>
+                    <AllRoutes />
                 </Provider>
                 <ScrollTop />
             </Container>

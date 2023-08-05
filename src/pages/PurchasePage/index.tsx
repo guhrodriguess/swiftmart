@@ -1,10 +1,7 @@
-// React Hooks
 import { useContext, useEffect, useState } from "react";
 
-// Context
 import AppContext from "@/contexts/AppContext";
 
-// Styles
 import {
     PurchaseComponent,
     PurchaseWrapper,
@@ -18,19 +15,14 @@ import {
     Info,
 } from "./styles";
 
-// CartItem Component
 import { CartItem } from "@/components/CartItem";
 
-// Icons
 import { ArrowLeft, Check } from "@phosphor-icons/react";
 
-// React Router
 import { Link } from "react-router-dom";
 
-// FormatCurrency Function
 import formatCurrency from "@/utils/formatCurrency";
 
-// Purchase Page
 export default function PurchasePage({ title }) {
     const { cartItems, setCartItems } = useContext(AppContext);
     const [isModalVisible, setIsModalVisible] = useState(false);
