@@ -16,13 +16,13 @@ export default function Home({ title }) {
     return (
         <>
             <Main />
-            <div style={{ margin: "5rem 0" }}>
+            <section style={{ margin: "5rem 0" }}>
                 <PhoneSlider />
                 <TechSlider />
                 <HardwareSlider />
                 <TvSlider />
                 <GameSlider />
-            </div>
+            </section>
         </>
     );
 }

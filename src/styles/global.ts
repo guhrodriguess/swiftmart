@@ -57,7 +57,7 @@ export const Container = styled.div`
     padding: 0 1rem;
 `;
 
-export const ProductCard = styled.section`
+export const ProductCard = styled.article`
     padding: 1rem 0;
     margin: 1rem 0;
 
