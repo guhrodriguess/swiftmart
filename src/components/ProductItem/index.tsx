@@ -27,6 +27,7 @@ export default function ProductItem({ data }) {
                 <img
                     src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
                     alt="product"
+                    loading="lazy"
                 />
             </Styles.ImageWrapper>
             <Styles.Content>

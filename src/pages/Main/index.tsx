@@ -15,7 +15,7 @@ export default function Main() {
                         <button>Conheça os produtos </button>
                     </a>
                 </Styles.Content>
-                <img src={homeImage} alt="SwiftMart" />
+                <img src={homeImage} alt="SwiftMart" loading="lazy" />
             </Styles.MainLayout>
         </Styles.MainComponent>
     );
