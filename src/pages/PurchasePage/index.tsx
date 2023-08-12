@@ -2,18 +2,7 @@ import { useContext, useEffect, useState } from "react";
 
 import AppContext from "@/contexts/AppContext";
 
-import {
-    PurchaseComponent,
-    PurchaseWrapper,
-    Title,
-    CartList,
-    CartResume,
-    ConfirmComponent,
-    ModalComponent,
-    ModalWrapper,
-    Modal,
-    Info,
-} from "./styles";
+import * as Styles from "./styles";
 
 import { CartItem } from "@/components/CartItem";
 
@@ -54,34 +43,34 @@ export default function PurchasePage({ title }) {
 
     return (
         <>
-            <PurchaseComponent>
-                <PurchaseWrapper>
-                    <Title>
+            <Styles.PurchaseComponent>
+                <Styles.PurchaseWrapper>
+                    <Styles.Title>
                         Carrinho
                         <hr />
-                    </Title>
-                    <CartList>
+                    </Styles.Title>
+                    <Styles.CartList>
                         {cartItems.map((cartItem) => (
                             <CartItem key={cartItem.id} data={cartItem} />
                         ))}
-                    </CartList>
-                    <CartResume>
+                    </Styles.CartList>
+                    <Styles.CartResume>
                         <p>
                             Total <span id="divider">&mdash;</span>{" "}
                             <span>{formatCurrency(totalPrice)}</span>
                         </p>
-                    </CartResume>
-                    <ConfirmComponent>
+                    </Styles.CartResume>
+                    <Styles.ConfirmComponent>
                         <button onClick={handleModal}>confirmar compra</button>
-                    </ConfirmComponent>
-                </PurchaseWrapper>
-            </PurchaseComponent>
+                    </Styles.ConfirmComponent>
+                </Styles.PurchaseWrapper>
+            </Styles.PurchaseComponent>
 
             {isModalVisible && (
-                <ModalComponent>
-                    <ModalWrapper>
-                        <Modal>
-                            <Info>
+                <Styles.ModalComponent>
+                    <Styles.ModalWrapper>
+                        <Styles.Modal>
+                            <Styles.Info>
                                 <div className="title">
                                     <button>
                                         <Check weight="bold" size={30} />
@@ -102,10 +91,10 @@ export default function PurchasePage({ title }) {
                                         voltar ao início
                                     </button>
                                 </Link>
-                            </Info>
-                        </Modal>
-                    </ModalWrapper>
-                </ModalComponent>
+                            </Styles.Info>
+                        </Styles.Modal>
+                    </Styles.ModalWrapper>
+                </Styles.ModalComponent>
             )}
         </>
     );

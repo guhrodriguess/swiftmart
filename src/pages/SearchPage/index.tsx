@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 
 import AppContext from "@/contexts/AppContext";
 
-import { Section, ProductList, Details } from "./styles";
+import * as Styles from "./styles";
 
 import ProductItem from "@/components/ProductItem";
 
@@ -25,17 +25,17 @@ export default function SearchPage() {
     });
 
     return (
-        <Section>
-            <Details>
+        <Styles.Section>
+            <Styles.Details>
                 <h3>
                     Resultados para <span>{query}</span>
                 </h3>
-            </Details>
-            <ProductList>
+            </Styles.Details>
+            <Styles.ProductList>
                 {products.map((product) => (
                     <ProductItem key={product.id} data={product} />
                 ))}
-            </ProductList>
-        </Section>
+            </Styles.ProductList>
+        </Styles.Section>
     );
 }

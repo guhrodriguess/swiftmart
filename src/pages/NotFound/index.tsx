@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import { NotFoundComponent, Content } from "./styles";
+import * as Styles from "./styles";
 
 export default function NotFound({ title }) {
     useEffect(() => {
@@ -10,13 +10,13 @@ export default function NotFound({ title }) {
     }, [title]);
 
     return (
-        <NotFoundComponent>
-            <Content>
+        <Styles.NotFoundComponent>
+            <Styles.Content>
                 <p> A página que você está tentando acessar não existe.</p>
                 <Link to="/">
                     <button>Voltar ao início</button>
                 </Link>
-            </Content>
-        </NotFoundComponent>
+            </Styles.Content>
+        </Styles.NotFoundComponent>
     );
 }
