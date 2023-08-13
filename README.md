@@ -1,16 +1,7 @@
-<div align="center">
+## SwiftMart
 
-![Portfolio image](./public/readme-image.png)
+E-commerce simulation using the Mercado Livre API.
 
-</div>
-
-<div align="center"><strong>SwiftMart</strong></div>
-<div align="center">E-commerce simulation using <br /> the Mercado Livre API. <br /> Access <a href="https://swiftmartstore.vercel.app/">here</a>.</div>
-
-<br />
-
-<div align="center">
-
-[![My Skills](https://skillicons.dev/icons?i=react,typescript,styledcomponents)](https://skillicons.dev)
-
-</div>
+<a href="https://swiftmartstore.vercel.app/">
+    <img src="./public/readme-image.png" />
+</a>
