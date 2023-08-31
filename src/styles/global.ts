@@ -51,39 +51,39 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-    width: 100%;
-    max-width: 1450px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 1rem;
 `;
 
 export const ProductCard = styled.article`
-    padding: 1rem 0;
-    margin: 1rem 0;
+  padding: 1rem 0;
+  margin: 1rem 0;
 
-    .swiper-button-prev {
-        color: ${(props) => props.theme.primary};
+  .swiper-button-prev {
+    color: ${(props) => props.theme.primary};
+  }
+
+  .swiper-button-next {
+    color: ${(props) => props.theme.primary};
+  }
+
+  .info {
+    hr {
+      width: 5%;
+      height: 5px;
+      border: none;
+      background: ${(props) => props.theme.primary};
+      border-radius: 15px;
     }
 
-    .swiper-button-next {
-        color: ${(props) => props.theme.primary};
+    @media (max-width: 940px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .info {
-        hr {
-            width: 5%;
-            height: 5px;
-            border: none;
-            background: ${(props) => props.theme.primary};
-            border-radius: 15px;
-        }
-
-        @media (max-width: 940px) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+  }
 `;
 
 export const fadeIn = keyframes`

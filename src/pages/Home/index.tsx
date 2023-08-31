@@ -9,20 +9,20 @@ import TvSlider from "@/components/TvSlider";
 import Main from "@/pages/Main";
 
 export default function Home({ title }) {
-    useEffect(() => {
-        document.title = title;
-    }, [title]);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
-    return (
-        <>
-            <Main />
-            <section style={{ margin: "5rem 0" }}>
-                <PhoneSlider />
-                <TechSlider />
-                <HardwareSlider />
-                <TvSlider />
-                <GameSlider />
-            </section>
-        </>
-    );
+  return (
+    <>
+      <Main />
+      <section style={{ margin: "5rem 0" }}>
+        <PhoneSlider />
+        <TechSlider />
+        <HardwareSlider />
+        <TvSlider />
+        <GameSlider />
+      </section>
+    </>
+  );
 }

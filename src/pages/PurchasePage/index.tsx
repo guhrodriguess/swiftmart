@@ -13,89 +13,85 @@ import { Link } from "react-router-dom";
 import formatCurrency from "@/utils/formatCurrency";
 
 export default function PurchasePage({ title }) {
-    const { cartItems, setCartItems } = useContext(AppContext);
-    const [isModalVisible, setIsModalVisible] = useState(false);
+  const { cartItems, setCartItems } = useContext(AppContext);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-    useEffect(() => {
-        document.title = title;
-    }, [title]);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
-    const handleModal = () => {
-        setIsModalVisible(true);
+  const handleModal = () => {
+    setIsModalVisible(true);
 
-        if (!isModalVisible) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-    };
+    if (!isModalVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
 
-    const totalPrice = cartItems.reduce<string | number>(
-        (acc, item) => item.price + acc,
-        0
-    );
+  const totalPrice = cartItems.reduce<string | number>(
+    (acc, item) => item.price + acc,
+    0
+  );
 
-    const clearCart = () => {
-        setCartItems([]);
+  const clearCart = () => {
+    setCartItems([]);
 
-        document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = "auto";
+  };
 
-    return (
-        <>
-            <Styles.PurchaseComponent>
-                <Styles.PurchaseWrapper>
-                    <Styles.Title>
-                        Carrinho
-                        <hr />
-                    </Styles.Title>
-                    <Styles.CartList>
-                        {cartItems.map((cartItem) => (
-                            <CartItem key={cartItem.id} data={cartItem} />
-                        ))}
-                    </Styles.CartList>
-                    <Styles.CartResume>
-                        <p>
-                            Total <span id="divider">&mdash;</span>{" "}
-                            <span>{formatCurrency(totalPrice)}</span>
-                        </p>
-                    </Styles.CartResume>
-                    <Styles.ConfirmComponent>
-                        <button onClick={handleModal}>confirmar compra</button>
-                    </Styles.ConfirmComponent>
-                </Styles.PurchaseWrapper>
-            </Styles.PurchaseComponent>
+  return (
+    <>
+      <Styles.PurchaseComponent>
+        <Styles.PurchaseWrapper>
+          <Styles.Title>
+            Carrinho
+            <hr />
+          </Styles.Title>
+          <Styles.CartList>
+            {cartItems.map((cartItem) => (
+              <CartItem key={cartItem.id} data={cartItem} />
+            ))}
+          </Styles.CartList>
+          <Styles.CartResume>
+            <p>
+              Total <span id="divider">&mdash;</span>{" "}
+              <span>{formatCurrency(totalPrice)}</span>
+            </p>
+          </Styles.CartResume>
+          <Styles.ConfirmComponent>
+            <button onClick={handleModal}>confirmar compra</button>
+          </Styles.ConfirmComponent>
+        </Styles.PurchaseWrapper>
+      </Styles.PurchaseComponent>
 
-            {isModalVisible && (
-                <Styles.ModalComponent>
-                    <Styles.ModalWrapper>
-                        <Styles.Modal>
-                            <Styles.Info>
-                                <div className="title">
-                                    <button>
-                                        <Check weight="bold" size={30} />
-                                    </button>
-                                    <h2>Sucesso</h2>
-                                </div>
-                                <p>
-                                    Sua compra no valor de{" "}
-                                    <span>{formatCurrency(totalPrice)}</span>{" "}
-                                    foi efetuada!
-                                </p>
-                                <Link to="/">
-                                    <button id="back" onClick={clearCart}>
-                                        <ArrowLeft
-                                            weight="bold"
-                                            id="arrowLeft"
-                                        />
-                                        voltar ao início
-                                    </button>
-                                </Link>
-                            </Styles.Info>
-                        </Styles.Modal>
-                    </Styles.ModalWrapper>
-                </Styles.ModalComponent>
-            )}
-        </>
-    );
+      {isModalVisible && (
+        <Styles.ModalComponent>
+          <Styles.ModalWrapper>
+            <Styles.Modal>
+              <Styles.Info>
+                <div className="title">
+                  <button>
+                    <Check weight="bold" size={30} />
+                  </button>
+                  <h2>Sucesso</h2>
+                </div>
+                <p>
+                  Sua compra no valor de{" "}
+                  <span>{formatCurrency(totalPrice)}</span> foi efetuada!
+                </p>
+                <Link to="/">
+                  <button id="back" onClick={clearCart}>
+                    <ArrowLeft weight="bold" id="arrowLeft" />
+                    voltar ao início
+                  </button>
+                </Link>
+              </Styles.Info>
+            </Styles.Modal>
+          </Styles.ModalWrapper>
+        </Styles.ModalComponent>
+      )}
+    </>
+  );
 }

@@ -18,23 +18,23 @@ import ScrollTop from "@/components/ScrollTop";
 import { AllRoutes } from "./routes";
 
 const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
-    <Router>
-        <ThemeProvider theme={defaultTheme}>
-            <GlobalStyle />
-            <Toast />
-            <Container>
-                <Provider>
-                    <Header />
-                    <Cart />
-                    <AllRoutes />
-                </Provider>
-                <ScrollTop />
-            </Container>
-            <Footer />
-        </ThemeProvider>
-    </Router>
+  <Router>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <Toast />
+      <Container>
+        <Provider>
+          <Header />
+          <Cart />
+          <AllRoutes />
+        </Provider>
+        <ScrollTop />
+      </Container>
+      <Footer />
+    </ThemeProvider>
+  </Router>
 );
