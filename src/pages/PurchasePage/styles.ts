@@ -17,8 +17,10 @@ export const PurchaseComponent = styled.section`
 `;
 
 export const PurchaseWrapper = styled.div`
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 5rem;
   animation: ${fadeIn} 0.6s ease;
   max-width: 600px;
@@ -44,17 +46,14 @@ export const CartList = styled.div`
   height: 100%;
   flex-grow: 1;
   overflow: auto;
-  margin-top: 2rem;
-  margin: 0 1.5rem;
+  margin-top: 1.5rem;
 `;
 
 export const CartResume = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2.1875rem 0;
-  width: 100%;
-  border-top: 1px solid ${(props) => props.theme.gray};
+  padding: 2rem 0;
 
   p {
     font-weight: 600;
@@ -102,6 +101,7 @@ export const ModalComponent = styled.div`
   left: 0;
   z-index: 999;
   background-color: ${(props) => props.theme.black_opacity};
+  backdrop-filter: blur(2px);
 `;
 
 export const ModalWrapper = styled.div`

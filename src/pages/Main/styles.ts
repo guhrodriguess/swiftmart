@@ -57,7 +57,7 @@ export const Content = styled.div`
     text-decoration: none;
   }
 
-  button {
+  .button {
     display: flex;
     align-items: center;
     padding: 1.2rem 2rem;
@@ -69,6 +69,7 @@ export const Content = styled.div`
     border: none;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    width: max-content;
 
     &:hover {
       background: ${(props) => props.theme.secondary};

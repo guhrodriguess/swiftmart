@@ -8,13 +8,17 @@ import { CartItem } from "@/components/CartItem";
 
 import { ArrowLeft, Check } from "@phosphor-icons/react";
 
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 
 import formatCurrency from "@/utils/formatCurrency";
 
 export default function PurchasePage({ title }) {
   const { cartItems, setCartItems } = useContext(AppContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  if (cartItems.length <= 0) {
+    redirect("/");
+  }
 
   useEffect(() => {
     document.title = title;
@@ -56,7 +60,7 @@ export default function PurchasePage({ title }) {
           </Styles.CartList>
           <Styles.CartResume>
             <p>
-              Total <span id="divider">&mdash;</span>{" "}
+              Valor total <span id="divider">&mdash;</span>{" "}
               <span>{formatCurrency(totalPrice)}</span>
             </p>
           </Styles.CartResume>

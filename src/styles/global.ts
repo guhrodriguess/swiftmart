@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
     }
+
+		.toaster li {
+			padding: 1rem !important;
+		}
 `;
 
 export const Container = styled.div`

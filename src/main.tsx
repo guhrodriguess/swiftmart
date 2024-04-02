@@ -7,12 +7,13 @@ import GlobalStyle, { Container } from "@/styles/global.ts";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { Toaster } from "sonner";
+
 import Provider from "@/contexts/Provider";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Cart from "@/components/Cart";
-import Toast from "@/components/Toast";
 import ScrollTop from "@/components/ScrollTop";
 
 import { AllRoutes } from "./routes";
@@ -25,7 +26,7 @@ root.render(
   <Router>
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Toast />
+      <Toaster position="bottom-right" richColors className="toaster" />
       <Container>
         <Provider>
           <Header />

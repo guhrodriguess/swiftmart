@@ -6,9 +6,8 @@ import * as Styles from "./styles";
 
 import AppContext from "@/contexts/AppContext";
 
-import { addProductAlert } from "@/components/Toast";
-
 import { Plus } from "@phosphor-icons/react";
+import { toast } from "sonner";
 
 export default function ProductItem({ data }) {
   const { thumbnail, title, price } = data;
@@ -18,16 +17,13 @@ export default function ProductItem({ data }) {
   const handleAddCart = () => {
     setCartItems([...cartItems, data]);
 
-    addProductAlert();
+    toast.success("Produto adicionado ao carrinho!");
   };
 
   return (
     <Styles.ProductComponent>
       <Styles.ImageWrapper>
-        <img
-          src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
-          alt="product"
-        />
+        <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")} alt="product" />
       </Styles.ImageWrapper>
       <Styles.Content>
         <h4>{title.slice(0, 40)}...</h4>
